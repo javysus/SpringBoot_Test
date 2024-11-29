@@ -30,7 +30,7 @@ public class ChatMessageService {
     public ResponseEntity<ApiResponse> getChat(int driver_id, int passenger_id){
             try{
                 //List<ChatMessage> chat = repositorio.findByDriverIdAndPassengerId(driver_id, passenger_id);
-                System.out.println(repositorio.findByDriverIdAndPassengerId(driver_id, passenger_id).get(0).getMessage());
+                //System.out.println(repositorio.findByDriverIdAndPassengerId(driver_id, passenger_id).get(0).getMessage());
                 ApiResponse response = new ApiResponse("Chat retrieved successfully", "OK",
                  repositorio.findByDriverIdAndPassengerId(driver_id, passenger_id));
                 return new ResponseEntity<>(response, HttpStatus.OK);
