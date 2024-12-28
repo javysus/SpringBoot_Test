@@ -13,20 +13,20 @@ public class ChatMessage {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="id")
-    private Long id;
+    @Column(name="id_message")
+    private Long id_message;
 
     @Column(name="message")
     private String message;
 
-    @Column(name="fromWho")
-    private String fromWho;
+    @Column(name="from_who")
+    private String from_who;
 
     @Column(name="fecha")
     private Date fecha;
 
-    @Column(name="chat")
-    private Integer chat;
+    @Column(name="id_chat")
+    private Integer id_chat;
 
     @Column(name="driver_id")
     private Integer driverId;
@@ -43,12 +43,12 @@ public class ChatMessage {
     public ChatMessage() {
     }
 
-    public ChatMessage(String message, String fromWho, Date fecha, Integer chat, Integer driver_id, Integer passenger_id,
+    public ChatMessage(String message, String from_who, Date fecha, Integer id_chat, Integer driver_id, Integer passenger_id,
     Integer sender_id, Integer receiver_id){
         this.message = message;
-        this.fromWho = fromWho;
+        this.from_who = from_who;
         this.fecha = fecha;
-        this.chat = chat;
+        this.id_chat = id_chat;
         this.driverId = driver_id;
         this.passengerId = passenger_id;
         this.sender_id = sender_id;
@@ -57,10 +57,10 @@ public class ChatMessage {
     }
 
     public Long getId() {
-        return id;
+        return id_message;
     }
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long id_message) {
+        this.id_message = id_message;
     }
 
     public String getMessage() {
@@ -71,12 +71,12 @@ public class ChatMessage {
         this.message = message;
     }
 
-    public String getFromWho() {
-        return fromWho;
+    public String getfrom_who() {
+        return from_who;
     }
 
-    public void setFromWho(String fromWho) {
-        this.fromWho = fromWho;
+    public void setfrom_who(String from_who) {
+        this.from_who = from_who;
     }
 
     public Date getFecha() {
@@ -88,11 +88,11 @@ public class ChatMessage {
     }
 
     public Integer getChat() {
-        return chat;
+        return id_chat;
     }
 
-    public void setChat(Integer chat) {
-        this.chat = chat;
+    public void setChat(Integer id_chat) {
+        this.id_chat = id_chat;
     }
 
     public Integer getDriverId() {

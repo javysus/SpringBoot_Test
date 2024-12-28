@@ -1,11 +1,11 @@
 package com.example.demo.ChatMessage.Model;
 
 
-public class Chat {
+public class ChatInput {
     private Integer driverId;
     private Integer passengerId;
 
-    public Chat(Integer driverId, Integer passengerId) {
+    public ChatInput(Integer driverId, Integer passengerId) {
         this.driverId = driverId;
         this.passengerId = passengerId;
     }

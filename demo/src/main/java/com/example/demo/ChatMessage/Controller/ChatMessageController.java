@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.ApiResponse.ApiResponse;
-import com.example.demo.ChatMessage.Model.Chat;
+import com.example.demo.ChatMessage.Model.ChatInput;
 import com.example.demo.ChatMessage.Model.ChatMessage;
 import com.example.demo.ChatMessage.Service.ChatMessageService;
 
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 //@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
-@RequestMapping("/chat")
+@RequestMapping("/mensajes")
 public class ChatMessageController {
     @Autowired
     ChatMessageService servicio;
@@ -31,7 +31,7 @@ public class ChatMessageController {
     }
 
     @GetMapping("/getChat")
-    public ResponseEntity<ApiResponse> getChat(@RequestBody Chat chat){
+    public ResponseEntity<ApiResponse> getChat(@RequestBody ChatInput chat){
         return servicio.getChat(chat.getDriverId(), chat.getPassengerId());
     }
 

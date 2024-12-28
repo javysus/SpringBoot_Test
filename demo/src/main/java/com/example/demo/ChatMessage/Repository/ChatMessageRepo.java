@@ -13,4 +13,5 @@ public interface ChatMessageRepo extends JpaRepository<ChatMessage, Serializable
     // public abstract List<ChatMessage> findByChatId(int chat);
 
     public abstract List<ChatMessage> findByDriverIdAndPassengerId(int driver_id, int passenger_id);
+
 }
