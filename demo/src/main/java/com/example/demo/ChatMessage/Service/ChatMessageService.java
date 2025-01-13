@@ -22,6 +22,14 @@ public class ChatMessageService {
 
     public ResponseEntity<ApiResponse> sendMessage(ChatMessage message){
         try{
+            //Si el chat no existe
+            System.out.println(chatService.getChatById(message.getChat()));
+            if(chatService.getChatById(message.getChat()) == null){
+                System.out.println("Chat no existe");
+                ApiResponse response = new ApiResponse("El chat no existe", "NOOK", null);
+                return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }  
+            
             //Guardar el mensaje en la base de datos
             repositorio.save(message);
             

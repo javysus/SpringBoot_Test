@@ -48,6 +48,14 @@ public class ChatService {
         repositorio.save(chat);
     }
 
+    //Obtiene el chat
+    public Chat getChatById(int id_chat){
+        
+        Chat chat = repositorio.findByIdChat(id_chat);
+
+        return chat;
+    }
+
     public ResponseEntity<ApiResponseChat> getDriverChats(int driver_id){
         try{
             ApiResponseChat response = new ApiResponseChat("Chats retrieved successfully", "OK",
